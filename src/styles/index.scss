@@ -1,0 +1,10 @@
+@import '~normalize.css';
+
+@import './variables';
+@import './layout';
+@import './typography';
+@import './buttons';
+
+.error {
+  color: red;
+}

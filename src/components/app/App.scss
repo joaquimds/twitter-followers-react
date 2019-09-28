@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.app {
+  background-color: white;
+  flex-direction: column;
+  margin: auto;
+  max-width: 100%;
+  padding: $spacing-lg;
+  width: $app-width;
+
+  @media (min-width: $desktop-min-width) {
+    flex-direction: row;
+  }
+}
+
+.app__title {
+  flex-direction: row;
+
+  h1 {
+    margin: 0 $spacing-sm $spacing-lg 0;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    flex-direction: column;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
+
+.app__column {
+  margin: auto;
+}
+
+.app__column:first-child {
+  @media (min-width: $desktop-min-width) {
+    margin: auto $spacing-lg auto 0;
+  }
+}
+
+.app__main {
+  margin-bottom: $spacing-lg;
+}
