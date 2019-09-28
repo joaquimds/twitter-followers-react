@@ -1,5 +1,6 @@
 import React from 'react'
 import { API_URL } from '../../constants'
+import './TwitterLogin.scss'
 
 function TwitterLogin () {
   const onClickLogin = async () => {
@@ -7,7 +8,7 @@ function TwitterLogin () {
   }
   return (
     <div className='twitter-login'>
-      <button className='button' type='button' onClick={onClickLogin}>Login With Twitter</button>
+      <button className='button' type='button' onClick={onClickLogin}>Login With Twitter to Know Your Followers</button>
     </div>
   )
 }

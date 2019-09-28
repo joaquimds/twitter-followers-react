@@ -12,6 +12,7 @@ function App () {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [userData, setUserData] = useState(null)
+  const [isClicked, setIsClicked] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +27,14 @@ function App () {
     }
     fetchData()
   }, [])
+  
+  const handleMouseClick = () => {
+    setIsClicked(!isClicked)
+  }
+
+  const handleMouseUnclick = () => {
+    setIsClicked(false)
+  }
 
   const main = () => {
     if (loading) {
@@ -34,11 +43,16 @@ function App () {
     if (userData) {
       return <Dashboard userData={userData} />
     }
+    
     return (
-      <div>
+      <div className='intro'>
         {error ? <p className='error'>{error}</p> : ''}
         <p>Find out what you should tweet to your followers.</p>
         <TwitterLogin />
+        <div onClick={handleMouseClick}>
+          <p className='intro__why' >So why do I need to login?</p>
+          {isClicked ? <p className='intro__hover'>Logging in with your account lets us access the Know Your Followers is developed and maintained by Campaign Lab.</p> : ''}
+        </div>
       </div>
     )
   }
