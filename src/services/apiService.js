@@ -7,7 +7,7 @@ export const fetchUserData = async () => {
     ({ data } = await axios.get(`${API_URL}/test`, { withCredentials: true }))
   } catch (e) {
     if (e.response && e.response.status) {
-      if (e.response.status === 401) {
+      if (e.response.status === 401 || e.response.status === 403) {
         return null
       }
       if (e.response.status === 429) {

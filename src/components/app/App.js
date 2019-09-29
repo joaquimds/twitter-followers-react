@@ -32,10 +32,6 @@ function App () {
     setIsClicked(!isClicked)
   }
 
-  const handleMouseUnclick = () => {
-    setIsClicked(false)
-  }
-
   const main = () => {
     if (loading) {
       return <p>Loading...</p>
