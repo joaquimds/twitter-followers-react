@@ -35,7 +35,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className='intro'>
+      <div>
         {error ? <p className='error'>{error}</p> : ''}
         <h2>Your voice on Twitter can help win the election for Labour - find out how!</h2>
         <p>
