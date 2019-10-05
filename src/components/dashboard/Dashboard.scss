@@ -1,7 +1,12 @@
-.dashboard {
+@import '../../styles/variables';
 
+.dashboard {
   .button {
-    color: white;
     margin-right: auto;
+  }
+
+  img {
+    margin-bottom: $spacing-md;
+    width: 100%;
   }
 }

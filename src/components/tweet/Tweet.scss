@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.tweet {
+  p {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.tweet__text {
+  border-color: $dark;
+  box-sizing: border-box;
+  height: 100px;
+  margin-bottom: $spacing-md;
+  max-width: 400px;
+  padding: $spacing-sm;
+  width: 100%;
+}
+
+.tweet__button {
+  background-color: rgba(29, 161, 242, 0.8);
+
+  &:hover {
+    color: white;
+    background-color: #1da1f2;
+  }
+}

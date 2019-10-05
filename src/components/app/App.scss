@@ -1,60 +1,41 @@
 @import '../../styles/variables';
 
 .app {
-  background-color: white;
   flex-direction: column;
-  margin: $spacing-lg auto;
   max-width: 100%;
   padding: $spacing-lg;
-  width: $app-width;
 
   @media (min-width: $desktop-min-width) {
     flex-direction: row;
   }
 }
 
-.intro {
-  text-align: center;
-}
-
-.intro__why {
-  margin: auto;
-  font-size: 80%;
-  color: grey;
-}
-
-.intro__hover {
-  margin: auto;
-  text-align: center;
-  font-size: 90%;
-}
-
 .app__title {
   flex-direction: row;
+  flex-wrap: wrap;
 
   h1 {
-    margin: 0 $spacing-sm $spacing-lg 0;
+    margin: 0 $spacing-sm $spacing-sm 0;
   }
 
   @media (min-width: $desktop-min-width) {
     flex-direction: column;
 
     h1 {
-      margin: 0;
+      margin-bottom: 0;
+      margin-right: $spacing-lg;
     }
   }
 }
 
-.app__column {
+.app__content {
+  background-color: white;
   margin: auto;
-}
-
-.app__column:first-child {
-  @media (min-width: $desktop-min-width) {
-    margin: auto $spacing-lg auto 0;
-  }
+  padding: $spacing-lg;
+  max-width: $app-width;
+  width: 100%;
 }
 
 .app__main {
-  margin-bottom: $spacing-lg;
+  padding-bottom: $spacing-lg;
 }

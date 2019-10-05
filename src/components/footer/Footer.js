@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className='footer'>
       <p>
-        Developed by [INSERT CREDITS HERE]
+        Developed by <a href='https://campaignlab.london'>CampaignLab</a>
       </p>
     </div>
   )

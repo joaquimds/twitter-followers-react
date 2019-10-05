@@ -11,7 +11,7 @@ import { fetchUserData } from '../../services/apiService'
 class App extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { loading: true, error: '', userData: null, isClicked: false }
+    this.state = { loading: true, error: '', userData: null }
   }
 
   async componentDidMount () {
@@ -25,12 +25,8 @@ class App extends React.Component {
     this.setState({ loading: false })
   }
 
-  handleMouseClick () {
-    this.setState({ isClicked: !this.state.isClicked })
-  }
-
   renderMain () {
-    const { loading, userData, isClicked, error } = this.state
+    const { loading, userData, error } = this.state
     if (loading) {
       return <p>Loading...</p>
     }
@@ -41,12 +37,13 @@ class App extends React.Component {
     return (
       <div className='intro'>
         {error ? <p className='error'>{error}</p> : ''}
-        <p>Find out what you should tweet to your followers.</p>
+        <h2>Your voice on Twitter can help win the election for Labour - find out how!</h2>
+        <p>
+          Know Your Followers analyses the people who follow you on Twitter and works out the best way that your tweets
+          can build support for Labour and win the election. Find out what kind of digital activist you are, and become
+          a part of the Labour 2019 Twitter campaign.
+        </p>
         <TwitterLogin />
-        <div onClick={() => this.handleMouseClick()}>
-          <p className='intro__why'>So why do I need to login?</p>
-          {isClicked ? <p className='intro__hover'>Logging in with your account lets us access the Know Your Followers is developed and maintained by Campaign Lab.</p> : ''}
-        </div>
       </div>
     )
   }
@@ -54,12 +51,12 @@ class App extends React.Component {
   render () {
     return (
       <div className='app'>
-        <div className='app__column app__title'>
+        <div className='app__title'>
           <h1>Know</h1>
           <h1>Your</h1>
           <h1>Followers</h1>
         </div>
-        <div className='app__column'>
+        <div className='app__content'>
           <main className='app__main'>
             {this.renderMain()}
           </main>
