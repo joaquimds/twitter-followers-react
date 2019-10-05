@@ -3,7 +3,7 @@ import { API_URL } from '../../constants'
 import './TwitterLogin.scss'
 
 function TwitterLogin () {
-  const onClickLogin = async () => {
+  const onClickLogin = () => {
     window.location = `${API_URL}/sessions/connect?client=react`
   }
   return (
