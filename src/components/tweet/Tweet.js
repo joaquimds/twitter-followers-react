@@ -5,7 +5,8 @@ import React from 'react'
 export default class Tweet extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { tweetText: (this.props.tweetText || '').trim() }
+    const tweetText = `${this.props.tweetText || ''} ${this.props.tweetUrl || ''}`.trim()
+    this.state = { tweetText }
   }
 
   onChangeTweet (e) {
@@ -19,7 +20,7 @@ export default class Tweet extends React.Component {
         <textarea className='tweet__text' onChange={(e) => this.onChangeTweet(e)} value={this.state.tweetText} />
         <a
           className='button tweet__button twitter-share-button'
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(this.state.tweetText)}&url=${encodeURIComponent(this.props.tweetUrl)}`}
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(this.state.tweetText)}`}
         >
           Spread the Word
         </a>

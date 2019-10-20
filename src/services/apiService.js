@@ -4,7 +4,7 @@ import { API_URL } from '../constants'
 export const fetchUserData = async () => {
   let data = null
   try {
-    ({ data } = await axios.get(`${API_URL}/test`, { withCredentials: true }))
+    ({ data } = await axios.get(`${API_URL}/api`, { withCredentials: true }))
   } catch (e) {
     if (e.response && e.response.status) {
       if (e.response.status === 401 || e.response.status === 403) {
